@@ -1,158 +1,55 @@
 <!doctype html>
-<html>
-<head>
-	<title>Python Flask ReplAuth</title>
-<script src="https://replit.com/public/js/repl-auth-v2.js"></script>
-</head>
-<body>
-	{% if user_id %}
-	<center>
-  <div class="box">
-    <center>
-    <div class="box-text-auth">
-      <p>
-        Hello, {{ user_name }}! ({{ user_id }})
-      </p>
-    </div>
-  <img src="{{ user_profile_image }}" width="200">
-    <center>
-  </center>
-  </div>
-	{% else %}
-  <center>
-    <center>
-      <div class="box">
-        <div class="box-text">
-            <h1>Hello!</h1>
-        </div>
-        <div class="box-button">
-          <button onclick="LoginWithReplit()"> Login w/ replit</button>
-        </div>
-    </center>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- hero section-->
+    <div class='container-fluid'>
+      <div class="row">
+        <div class="col "><h1 style="text-align: center;"">Nice To See you here</h1></div>
+        <div class="col"><img src="/static/final2.png" class="img-fluid" alt="Guy sitting on a chair with a laptop"></div>
+        
       </div>
-  </center>
+    <!-- about me -->
+      <div class='container-fluid''>
+      <h2>About me</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum repudiandae incidunt ullam iste, magni quis sunt? Harum aspernatur, delectus aliquam voluptatibus recusandae ducimus temporibus. Voluptas nesciunt dolorum accusantium natus ad sunt mollitia! Temporibus neque dolor non aliquam saepe, voluptates voluptas, autem quo, dolore quam provident alias reiciendis iste? Debitis modi ipsum, sequi, autem corporis exercitationem voluptas iste libero nostrum architecto accusamus provident saepe atque earum molestiae quis, sed error pariatur alias dolorum repudiandae placeat? Impedit officiis quis qui id voluptatum odit minima ab porro quaerat, velit, eveniet est! Expedita beatae, error molestias sunt consequatur doloribus. Eaque adipisci quaerat facilis ducimus? Accusantium adipisci ab officia maxime, quidem dolore veniam mollitia illo in libero excepturi iste tempore harum ad non quod earum, rerum, fuga odio consectetur qui. Aspernatur architecto rerum omnis quas eos consectetur ullam molestias nulla asperiores, amet debitis nemo odit accusantium voluptates corrupti explicabo! Facere, totam. Eos, natus! Perferendis, et est iure neque repellat, repellendus fugiat, excepturi ducimus consequuntur voluptatum aliquid quas. Vel libero rerum molestias rem optio voluptas quaerat minus officiis eaque nisi eveniet facere autem, quam neque deleniti quae eius ullam. Doloremque ab, maxime, error perferendis eveniet nobis laudantium mollitia saepe laborum eos aspernatur odit est recusandae quisquam?</p>
+      
+    </div>
+    
+    <h2 style='text-align: center;'> Programming Language </h2>
+    <div class='container-fluid mb-6'>
+      {% for lng in Lang %}
+        <h3 style="text-align: center"><b> Language: </b>{{lng.Lang}}</h3>
+        <h3 style="text-align: center"><b> Experience: </b>{{lng.Experience}}</h3>
+      {% endfor %}
+    </div>
+    {% include 'footer.html' %}
 
-	{% endif %}
-</body>
-<style>
-  html, body {
-  height: 100%;
-  width: 100%;
-  background-color:#121212;
-}
 
-@font-face {
-  font-family: "Font";
-  src: url("https://css.replit.cool/Chess/src/fonts/Poppins-Bold[1].ttf");
-}
 
-h1{
-  font-family:"Font";
-  font-size:75px;
-  color:#00bbf9;
-}
 
-p{
-  font-family:"Font";
-  font-size:22px;
-  color:#00bbf9;
-}
 
-a{
-  font-family:"Font";
-  color:white;
-  font-size:22px;
-  text-decoration:none;
-  cursor:help;
-  text-shadow:2px 2px #00bbf9;
-}
 
-address{
-  font-family:"Font";
-  font-size:18px;
-  text-shadow:2px 2px #00bbf9;
-}
 
-summary{
-  font-family:"Font";
-  font-size:20px;
-  text-shadow:2px 2px #c400fa;
-  transition:0.7s;
-}
 
-details{
-  font-family:"Font";
-  font-size:20px;
-  text-shadow:2px 2px #c400fa;
-}
 
-::placeholder{
-  font-family:"Font";
-  font-size:25px;
-  color:#787878;
-}
 
-button{
-  width:200px;
-  height:55px;
-  font-family:"Trebuchet MS";
-  font-size:25px;
-  box-shadow:4px 4px white;
-  border-color:#00fa79;
-  color:white;
-  background-color:#00fa79;
-  border-radius:5px;
-}
 
-button:hover{
-  font-family:"Trebuchet MS";
-  font-size:25px;
-  background-color:white;
-  box-shadow:4px 4px #00fa79;
-  color:#00fa79;
-  border-radius:5px;
-  border-color:white;
-  transition:0.7s;
-}
 
-button:disabled{
-  font-family:"Trebuchet MS";
-  font-size:25px;
-  background-color:white;
-  box-shadow:4px 4px #00fa79;
-  border-radius:5px;
-  border-color:#121212;
-  cursor:not-allowed;
-  color:white;
-}
 
-.box-position{
-  position:relative;
-}
-  
-.box{
-  width:300px;
-  height:300px;
-  background-color:#495057;
-  border-radius:5px;
-  border-color:white;
-  position:relative;
-  top:150px;
-}
 
-.box-text{
-  position:relative;
-  top:60px;
-}
 
-.box-button{
-  position:relative;
-  top:20px;
-}
 
-.box-text-auth{
-  position:relative;
-  top:10px;
-}
-</style>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
 </html>
