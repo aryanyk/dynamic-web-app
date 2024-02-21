@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>{{job.TITLE}}-ARYAN</title>
+  {% include 'bootstrap.html' %}
+</head>
+<body>
+  {% include 'navbar.html' %}
+  <div class="container">
+    <h1 class="text-center mt-2 mb-4">Job Openings</h1>
+  <h3>Title</h3>
+  <p>{{job.TITLE}}</p>
+  <h3>LOCATION</h3>
+  <p>{{job.LOCATION}}</p>
+  <h3>Salary</h3>
+  <p>{{job.SALARY}}</p>
+  <h3>Currency</h3>
+  <p>{{job.CURRENCY}}</p>
+  <h3>Responsibility</h3>
+  <p>{{job.RESPONSIBILITY}}</p>
+    <!-- <ul>
+      <li>
+      {% for line in job.REQUIREMENTS.split("\n") %}
+      {{line}}
+      {% endfor %}
+    </ul> -->
+  </div>
+   {% include 'footer.html' %}
+</body>
+</html>
