@@ -1,1 +1,21 @@
-<div>TODO FORM</div>
+{% include 'navbar.html'%}
+{% include 'bootstrap.html'%}
+<h2>Application Form</h2>
+<form action="/job/{{job.ID}}/apply" method="post">
+    <div  class="mb-4">
+        <label for="name">Name:</label> <br>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="mb-4">
+        <label for="linkedin">LinkedIn URL:</label> <br>
+        <input type="url" id="linkedin" name="linkedin" required>
+    </div>
+    <div class="mb-4">
+        <label for="email">E-mail:</label> <br>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="mb-4">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+{% include 'footer.html'%}

@@ -1,5 +1,6 @@
-from flask import Flask,render_template,request,redirect,url_for,flash,session,jsonify
-from database import get_jobs_load,get_jobs
+from flask import Flask, jsonify, render_template, request
+
+from database import get_jobs, get_jobs_load,application_to_db
 
 app=Flask(__name__)
 
@@ -46,7 +47,13 @@ def show_job(id):
     return "Not Found",404
   return render_template('job.html',job=job)
   
-
+@app.route("/job/<id>/apply",methods=['post'])
+def job_apply(id):
+  data=request.form  #args when data is in url
+  # return jsonify(data)
+  application_to_db(id,data)
+  return render_template('submission.html',application=data)
+  
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)

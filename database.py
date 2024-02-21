@@ -37,3 +37,10 @@ def get_jobs(id):
     return None
   else:
     return result[0]
+
+def application_to_db(id,application):
+  with connection.cursor() as cursor:
+    sql = "INSERT INTO application(id, name, email, linkedin) VALUES (%s, %s, %s, %s)"
+    cursor.execute(sql, (id, application['name'], application['email'], application['linkedin']))
+    connection.commit()
+ 

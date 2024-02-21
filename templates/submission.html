@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Success</title>
+  {% include 'bootstrap.html' %}
+  {% include 'navbar.html' %}
+</head>
+<body>
+  <div class="container mt-5">
+    <H2> Form Submitted Successfully</H2>
+  <h4>Full Name</h4>
+  <div>{{application.name}}</div> 
+  <!-- here pass name tag value -->
+  <h4>Email</h4>
+  <div>{{application.email}}</div>
+  </div>
+  
+</body>
+  {% include 'footer.html' %}
+</html>
